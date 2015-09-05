@@ -14,8 +14,8 @@ end
 #index
 get "/" do
   @header = "my videos"
-  sql = "select title from videos"
-  @videos = @db.exec(sql)  
+  sql = "select id, title from videos"
+  @videos = @db.exec(sql) 
   erb :videos
 end
 
@@ -44,7 +44,10 @@ end
 
 #show
 get "/:video_id" do
-  
+  @header = "Video Details"
+  sql = "select * from videos where id = #{params[:video_id]};"
+  @video = @db.exec(sql) 
+  erb :video
 end
 
 #edit

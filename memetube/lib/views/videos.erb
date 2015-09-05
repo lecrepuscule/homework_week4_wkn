@@ -5,7 +5,7 @@
 
 <% if @outcome %>
   <% @outcome.each do |row|%>
-    <p><%= "#{row['title']} has been added succeffully" %></p>
+    <p><%= "#{row['title']} has been added successfully" %></p>
   <% end %>
 <% end %>
 
@@ -13,7 +13,7 @@
   <ul>
     <% if @videos %>
       <% @videos.each do |video| %>
-        <li><%= video["title"] %></li>
+        <li><a href="/<%= video['id'] %>"><%= video['title'] %></a></li>
       <% end %>
     <% end %>
   </ul>
