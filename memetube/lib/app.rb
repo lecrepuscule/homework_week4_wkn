@@ -19,10 +19,18 @@ get "/" do
   erb :videos
 end
 
-
 #new
+get "/new" do 
+  @header = "Add New Video"
+  erb :new
+end
 
 #create
+post "/" do 
+  
+  erb :videos
+end
+
 
 #show
 

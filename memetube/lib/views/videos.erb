@@ -1,4 +1,9 @@
-<div class="video-index">
+
+<form action='/new' method='get'>
+  <button>Add Video</button>
+</form>
+
+<div class='video-index'>
   <ul>
     <% if @videos %>
       <% @videos.each do |video| %>
