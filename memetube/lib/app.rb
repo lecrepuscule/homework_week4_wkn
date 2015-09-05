@@ -27,12 +27,25 @@ end
 
 #create
 post "/" do 
-  
+  sql = "insert into videos (
+    title, 
+    description, 
+    url, 
+    genre) values (
+    '#{params[:title]}',
+    '#{params[:description]}',
+    '#{params[:url]}',
+    '#{params[:genre]}'
+    ) returning *;"
+  @outcome = @db.exec(sql)
   erb :videos
 end
 
 
 #show
+get "/:video_id" do
+  
+end
 
 #edit
 

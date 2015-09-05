@@ -3,6 +3,12 @@
   <button>Add Video</button>
 </form>
 
+<% if @outcome %>
+  <% @outcome.each do |row|%>
+    <p><%= "#{row['title']} has been added succeffully" %></p>
+  <% end %>
+<% end %>
+
 <div class='video-index'>
   <ul>
     <% if @videos %>
