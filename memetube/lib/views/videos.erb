@@ -1,0 +1,9 @@
+<div class="video-index">
+  <ul>
+    <% if @videos %>
+      <% @videos.each do |video| %>
+        <li><%= video["title"] %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

@@ -1,5 +1,5 @@
 require "sinatra"
-require "sinatra/reloader" if developoment?
+require "sinatra/reloader" if development?
 require "pry"
 require "pg"
 
@@ -13,7 +13,7 @@ end
 
 #index
 get "/" do
-  @header = my videos
+  @header = "my videos"
   sql = "select title from videos"
   @videos = @db.exec(sql)  
   erb :videos
