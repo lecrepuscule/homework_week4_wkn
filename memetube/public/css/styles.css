@@ -1,0 +1,30 @@
+body {
+  background: hotpink
+}
+
+.title {
+  text-align: center;
+}
+
+.video-index {
+  text-align:center;
+  list-style-type: none;
+}
+
+iframe {
+  display: inherit;
+  margin: 0 auto;
+}
+
+li {
+  margin:0 auto;
+  text-decoration: none;
+}
+
+form {
+  text-align: center;
+}
+
+.input-block {
+  display:block;
+}

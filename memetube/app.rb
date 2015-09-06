@@ -19,7 +19,7 @@ end
 
 #index
 get "/" do
-  @header = "my videos"
+  @header = "Memetube"
   sql = "select id, title from videos"
   @videos = @db.exec(sql) 
   erb :videos
@@ -50,8 +50,8 @@ end
 
 #show
 get "/:video_id" do
-  @header = "Video Details"
   @video = get_Single_Video @db
+  @header = @video["title"]
   erb :video
 end
 
