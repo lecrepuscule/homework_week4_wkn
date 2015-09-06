@@ -4,6 +4,13 @@
   <iframe id="player" type="text/html" width="640" height="390" src='<%= "http://www.youtube.com/embed/#{@video['url']}" %>' frameborder="0"></iframe>
 <% end %>
 
+<% if @updated %>
+  <% @updated.each do |row|%>
+    <p><%= "#{row['title']} has been updated successfully" %></p>
+  <% end %>
+<% end %>
+
+
 <% if @edit %>
   <form action='/<%= @video['id'] %>' method='post'>
   <label for='title-input'>Title</label>
@@ -16,8 +23,8 @@
   <input name='genre' id='genre-input' placeholder="<%= @video['genre'] %>">
   <button>Update</button>
   </form>
-<% else %>
+<% elsif @video %>
   <form action="/<%= @video['id'] %>/edit" method="get">
-    <button>Edit</button>
+  <button>Edit</button>
   </form>
 <% end %>

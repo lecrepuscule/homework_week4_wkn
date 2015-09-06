@@ -65,6 +65,13 @@ end
 
 #update
 post "/:video_id" do
-  
+  sql = "update videos set 
+  title='#{params['title']}', 
+  description='#{params['description']}', 
+  url='#{params['url']}', 
+  genre='#{params['genre']}' 
+  where id=#{params['video_id']} returning *"
+  @updated = @db.exec(sql)
+  erb :video
 end
 #delete
