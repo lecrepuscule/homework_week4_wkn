@@ -74,4 +74,10 @@ post "/:video_id" do
   @updated = @db.exec(sql)
   erb :video
 end
+
 #delete
+post "/:video_id/delete" do
+  sql = "delete from videos where id=#{params['video_id']} returning *"
+  @deleted = @db.exec(sql)
+  erb :videos
+end

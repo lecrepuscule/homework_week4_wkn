@@ -3,6 +3,10 @@
   <% @newly_added.each do |row|%>
     <p><%= "#{row['title']} has been added successfully" %></p>
   <% end %>
+<% elsif @deleted %>
+  <% @deleted.each do |row|%>
+    <p><%= "#{row['title']} has been deleted" %></p>
+  <% end %>
 <% else %>
   <form action='/new' method='get'>
     <button>Add Video</button>
