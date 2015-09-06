@@ -43,7 +43,7 @@ post "/" do
     '#{params[:url]}',
     '#{params[:genre]}'
     ) returning *;"
-  @outcome = @db.exec(sql)
+  @newly_added = @db.exec(sql)
   erb :videos
 end
 
@@ -56,13 +56,15 @@ get "/:video_id" do
 end
 
 #edit
-post "/:video_id" do
-  @header = "Edit Details"
+get "/:video_id/edit" do
+  @header = "Edit Video"
   @edit = true
   @video = get_Single_Video @db
   erb :video
 end
 
 #update
+post "/:video_id"
+
 
 #delete

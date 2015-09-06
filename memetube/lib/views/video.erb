@@ -1,8 +1,23 @@
+
 <% if @video %>
   <h2><%= @video['title'] %></h2>
   <iframe id="player" type="text/html" width="640" height="390" src='<%= "http://www.youtube.com/embed/#{@video['url']}" %>' frameborder="0"></iframe>
 <% end %>
 
 <% if @edit %>
-  
+  <form action='/<%= @video['id'] %>' method='post'>
+  <label for='title-input'>Title</label>
+  <input name='title' id='title-input' placeholder="<%= @video['title'] %>">  
+  <label for='description-input'>Description</label>
+  <input name='description' id='description-input' placeholder="<%= @video['description'] %>">  
+  <label for='url-input'>Url</label>
+  <input name='url' id='url-input' placeholder="<%= @video['url'] %>">  
+  <label for='genre-input'>Genre</label>
+  <input name='genre' id='genre-input' placeholder="<%= @video['genre'] %>">
+  <button>Update</button>
+  </form>
+<% else %>
+  <form action="/<%= @video['id'] %>/edit" method="get">
+    <button>Edit</button>
+  </form>
 <% end %>

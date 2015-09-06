@@ -3,8 +3,8 @@
   <button>Add Video</button>
 </form>
 
-<% if @outcome %>
-  <% @outcome.each do |row|%>
+<% if @newly_added %>
+  <% @newly_added.each do |row|%>
     <p><%= "#{row['title']} has been added successfully" %></p>
   <% end %>
 <% end %>
