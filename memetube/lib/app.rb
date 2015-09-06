@@ -11,6 +11,12 @@ after do
   @db.close
 end
 
+def get_Single_Video db
+  sql = "select * from videos where id = #{params[:video_id]};"
+  result = db.exec(sql) 
+  video = result.first
+end
+
 #index
 get "/" do
   @header = "my videos"
@@ -45,12 +51,17 @@ end
 #show
 get "/:video_id" do
   @header = "Video Details"
-  sql = "select * from videos where id = #{params[:video_id]};"
-  @video = @db.exec(sql) 
+  @video = get_Single_Video @db
   erb :video
 end
 
 #edit
+post "/:video_id" do
+  @header = "Edit Details"
+  @edit = true
+  @video = get_Single_Video @db
+  erb :video
+end
 
 #update
 

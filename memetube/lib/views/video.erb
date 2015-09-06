@@ -1,6 +1,8 @@
 <% if @video %>
-  <% @video.each do |vid| %>
-    <h2><%= vid['title'] %></h2>
-    <iframe id="player" type="text/html" width="640" height="390" src='<%= "https://youtu.be/embed/#{vid['url']}" %>' frameborder="0"></iframe>
-  <% end %>
+  <h2><%= @video['title'] %></h2>
+  <iframe id="player" type="text/html" width="640" height="390" src='<%= "http://www.youtube.com/embed/#{@video['url']}" %>' frameborder="0"></iframe>
+<% end %>
+
+<% if @edit %>
+  
 <% end %>
