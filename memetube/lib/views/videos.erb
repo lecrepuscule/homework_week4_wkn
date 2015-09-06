@@ -1,12 +1,12 @@
 
-<form action='/new' method='get'>
-  <button>Add Video</button>
-</form>
-
 <% if @newly_added %>
   <% @newly_added.each do |row|%>
     <p><%= "#{row['title']} has been added successfully" %></p>
   <% end %>
+<% else %>
+  <form action='/new' method='get'>
+    <button>Add Video</button>
+  </form>
 <% end %>
 
 <div class='video-index'>

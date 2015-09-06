@@ -64,7 +64,7 @@ get "/:video_id/edit" do
 end
 
 #update
-post "/:video_id"
-
-
+post "/:video_id" do
+  
+end
 #delete
